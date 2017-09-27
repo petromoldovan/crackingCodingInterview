@@ -50,3 +50,40 @@ function allUniqueCharsDestruct(str) {
 }
 
 allUniqueCharsDestruct("triple")
+
+
+
+//1.2 Write code to reverse a C-Style String (C-String means that “abcd” is represented as five characters, including the null character)
+//1.2.A loop
+function reverse(str) {
+  let res = ""
+  for (let i = str.length - 1; i >= 0; i--) {
+    res = res + str[i]
+  }
+
+  return res
+}
+reverse("abcd")
+
+//1.2.A In place
+//THIS IS ANSWER FOR ALL LANGUAGES BUT NOT JS! In js strings are immutable!!!
+function reverse2(str) {
+  let data = str;
+  let i = 0;
+  let j = str.length - 1;
+  let temp = "";
+
+  while (i < j) {
+    temp = data[i]
+    data[i] = data[j]
+    data[j] = temp
+    i++
+    j--
+  }
+
+  console.log(data)
+
+  return data
+}
+
+reverse2("abcd5")
